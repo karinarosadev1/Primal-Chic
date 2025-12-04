@@ -1,8 +1,5 @@
-// Este archivo define el componente principal de la aplicación.
-// Renderiza títulos y varios botones personalizados utilizando el componente MyButton.
-// También exporta componentes secundarios (Subtitulo y Button) para que puedan 
-// ser usados desde main.jsx. Desde aquí se envían las props (text, color, onClick) 
-// hacia MyButton, que las utiliza para crear botones dinámicos.
+// Componente principal de la app.
+
 
 import './App.css'
 import './index.css'
@@ -11,19 +8,13 @@ import ListaProductos from './ListaProductos.jsx'
 import Tarjeta from './Tarjeta.jsx'
 
 
+//Se reemplazo el spread operator y se agregaron las tarjetas 
 
-//El spread operator ... pasa cada propiedad del objeto como prop separada. Aquí usamos spread operator para pasar titulo, descripcion y botonTexto como props en Tarjeta. 
-
-
-
+//Se puede pasar directamente el array sin usar la contante xq en React podés pasar cualquier valor como prop, incluso un array literal directamente, aunque esto es menos escalable <ListaProductos productos={['Camisa', 'Pantalón', 'Botas', 'Cinturón']} />
 function App() {
 
   const productos = ["Camisa", "Pantalón", "Botas", "Cinturón"];
-  const TarjetaDatos = {
-    titulo: "Oferta especial",
-    descripcion: "20% de descuento en todos los productos",
-    botonTexto: "Ver más"
-  }
+
 
   return (
     <>
@@ -31,21 +22,40 @@ function App() {
       <h2 className='greeting'>Arte Nativo</h2>
       <Subtitulo />
       <ListaProductos productos={productos} />
-      <Button/>
+      <hr />
+      <h2>Promociones</h2>
+      <div>
+        <Tarjeta
+          titulo="Oferta especial"
+          descripcion="20% de descuento en todos los productos"
+          botonTexto="Ver más" onClick={()=> alert("Veo Mas")}
+        />
+        
+        <Tarjeta
+          titulo="Nuevo lanzamiento"
+          descripcion="Colección primavera-verano disponible"
+          botonTexto="Descubrir" onClick={()=> alert("Estoy descubriendo")}
+        />
+        <Tarjeta
+          titulo="Promoción limitada"
+          descripcion="Envío gratis por 3 días"
+          botonTexto="Aprovechar" onClick={()=> alert("Estoy aprovechando")}
+        />
+      </div>
+
+      <hr />
+
+      <h2>Botones personalizados</h2>
       <MyButton onClick={() => alert('Aceptaste')} text="Aceptar" color="green" />
       <MyButton onClick={() => alert('Cancelaste')} text="Cancelar" color="red" />
       <MyButton onClick={() => alert('Restableciste')} text="Restablecer" color="blue" />
-     
-       <Tarjeta {...TarjetaDatos} />
+
     </>
   )
 }
 
 export default App
 
-
-//componente Subtitulo→ No recibe props, su contenido es estático y se utiliza como complemento visual de App. Button→ Muestra un botón simple con un alert. Ambos se exportan y se importan desde main.jsx.Esto permite que se muestren fuera de App, porque son independientes.
-// 
 
 function Subtitulo() {
 

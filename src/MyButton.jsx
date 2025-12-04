@@ -11,8 +11,10 @@ function MyButton({ text, color, onClick }) {
     const style = {
         backgroundColor: color,
         color: 'white',
-        padding: '25px 20px',
-        margin: '10px'
+        padding: '15px 20px',
+        margin: '10px',
+        borderRadius: '12px',
+        fontWeight: 'bold'
         
     }
 
