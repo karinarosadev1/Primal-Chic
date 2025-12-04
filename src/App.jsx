@@ -5,47 +5,65 @@
 // hacia MyButton, que las utiliza para crear botones dinámicos.
 
 import './App.css'
+import './index.css'
 import MyButton from './MyButton.jsx'
+import ListaProductos from './ListaProductos.jsx'
+import Tarjeta from './Tarjeta.jsx'
 
 
-//App le pasa datos a MyButton a través de props. Ej text="Aceptar" y Estas props viajan al hijo como un objeto→ { text: "Aceptar", color: "green", onClick: () => alert('Aceptaste') }
+
+//El spread operator ... pasa cada propiedad del objeto como prop separada. Aquí usamos spread operator para pasar titulo, descripcion y botonTexto como props en Tarjeta. 
+
+
 
 function App() {
 
+  const productos = ["Camisa", "Pantalón", "Botas", "Cinturón"];
+  const TarjetaDatos = {
+    titulo: "Oferta especial",
+    descripcion: "20% de descuento en todos los productos",
+    botonTexto: "Ver más"
+  }
+
   return (
     <>
-   <h1 className='greeting'>Bienvenido a Parcel</h1>
-   <h2 className='greeting'>Arte Nativo</h2>
-   <MyButton onClick={()=> alert('Aceptaste')} text="Aceptar" color="green"/>
-   <MyButton onClick={()=> alert('Cancelaste')} text="Cancelar" color="red"/>
-   <MyButton onClick={()=> alert('Restablecite')} text="Restablecer" color="blue"/>
-   </>
+      <h1 className='greeting'>Bienvenido a Primal Chic</h1>
+      <h2 className='greeting'>Arte Nativo</h2>
+      <Subtitulo />
+      <ListaProductos productos={productos} />
+      <Button/>
+      <MyButton onClick={() => alert('Aceptaste')} text="Aceptar" color="green" />
+      <MyButton onClick={() => alert('Cancelaste')} text="Cancelar" color="red" />
+      <MyButton onClick={() => alert('Restableciste')} text="Restablecer" color="blue" />
+     
+       <Tarjeta {...TarjetaDatos} />
+    </>
   )
 }
 
 export default App
 
 
-// Los componentes : Subtitulo→ muestra un text fijo. No recibe props, su contenido es estático y se utiliza como complemento visual de App. Button→ Muestra un botón simple con un alert. Ambos se exportan y se importan desde main.jsx.Esto permite que se muestren fuera de App, porque son independientes.
+//componente Subtitulo→ No recibe props, su contenido es estático y se utiliza como complemento visual de App. Button→ Muestra un botón simple con un alert. Ambos se exportan y se importan desde main.jsx.Esto permite que se muestren fuera de App, porque son independientes.
 // 
 
-function Subtitulo() { 
+function Subtitulo() {
 
-  return(
+  return (
     <h3 className='slogan'>Un espacio donde las raices cuentan</h3>
   )
 }
 
-export  {Subtitulo}
+export { Subtitulo }
 
 
 
 
-function Button(){
-  return(
-<button className='button'onClick={()=> alert("Hola!!!")} >Click Aqui</button>
+function Button() {
+  return (
+    <button className='button' onClick={() => alert("Hola!!!")} >Click Aqui</button>
   )
 }
 
-export {Button}
+export { Button }
 

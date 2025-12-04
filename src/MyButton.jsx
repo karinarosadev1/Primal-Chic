@@ -13,6 +13,7 @@ function MyButton({ text, color, onClick }) {
         color: 'white',
         padding: '25px 20px',
         margin: '10px'
+        
     }
 
     return (

@@ -12,9 +12,7 @@ import App, {Subtitulo, Button} from './App.jsx'
 createRoot(document.getElementById('root')).render(
 <>
     <App />
-    <Subtitulo/>
-    <Button/>
-   
+  
  </>
 )
 
