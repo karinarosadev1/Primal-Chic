@@ -1,30 +1,50 @@
-/* ====================================
-   GALLERY – PRIMAL CHIC
-  Estilo boho, colores naturales
-   ==================================== */
+/* ===============================
+   GALLERY – PRIMAL CHIC (responsive)
+   =============================== */
 
+.gallery-section {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.gallery-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #7a6754;
+  margin-bottom: 1.5rem;
+}
 
 .gallery-container {
   display: flex;
   justify-content: center;
-  gap: 15px;
-  margin-top: 30px;
-
-  
-  background-color:  #fffefd;
-  padding: 20px;
-  border-radius: 12px;
+  gap: 0.1rem;
+  background-color: #fffefd;
+  padding: 1.5rem;  
 }
 
+/* ==== IMÁGENES FLEXIBLES ==== */
 .gallery-image {
-  width: 150px;
-  height: 150px;
+  width: 60%;           /* se adapta al ancho disponible */
+  max-width: 20rem;     /* límite para pantallas grandes */
+  height: auto;         /* conserva proporción */
   object-fit: cover;
-  border-radius: 10px;
- border: 2px solid #c9b8a8; 
+ /* border-radius: 0.3rem;*/
+  /*border: 0.8rem solid #f2f2f2;*/
   transition: transform 0.3s ease;
 }
 
 .gallery-image:hover {
-  transform: scale(1.06);
+  transform: scale(1.07);
+}
+
+/* Grid automático para pantallas chicas */
+@media (max-width: 600px) {
+  .gallery-container {
+    flex-wrap: wrap;
+  }
+
+  .gallery-image {
+    width: 80%;         /* más grandes en móvil */
+    max-width: none;
+  }
 }

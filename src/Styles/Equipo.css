@@ -1,5 +1,7 @@
 h2 {
-    text-align: center;
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 2rem;
 }
 
 .TarjetaMiembro {
@@ -14,9 +16,20 @@ h2 {
 
 /* Tarjeta individual */
 .TarjetaMiembro li {
-    background: #f3eee7;
-    border: 1px solid #d8d2c6;
+    /*background: #f3eee7;
+    border: 1px solid #d8d2c6;*/
     border-radius: 16px;
     padding: 20px;
-    text-align: center;   /* ✔️ corregido */
+    text-align: center;   
+}
+
+/* IMÁGENES REDONDAS ELEGANTES */
+.equipo-image {
+  width: 8rem;             
+  height: 8rem;            
+  border-radius: 50%;       /* círculo */
+  object-fit: cover;        /* evita deformación */
+  border: 0.12rem solid #bfbfbf;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15); 
+  margin-bottom: 1rem;
 }

@@ -3,24 +3,21 @@
 import React from 'react'
 import '../Styles/Equipo.css'
 
-function Equipo() {
-
-    const miembros = [
-        { name: 'Silvia', rol: "Product Owner", image: "#" },
-        { name: 'Luis', rol: "Product Owner", image: "#" },
-        { name: 'Matias', rol: "Product Owner", image: "#" },
-        { name: 'Sabrina', rol: "Product Owner", image: "#" },
-    ];
+function Equipo({ miembros }) {
 
 
     return (
         <>
             <h2>Nuestro Equipo</h2>
-            <ul className="TarjetaMiembro">
-                {miembros.map(miembro => (
 
-                    <li key={miembro.id}>
-                       <img src={miembro.image} alt={miembro.name} />
+            <ul className="TarjetaMiembro">
+                {miembros.map((miembro, i) => (
+
+                    <li key={i}>
+                        <img className='equipo-image'
+                            src={miembro.image}
+                            alt={miembro.name} />
+                            
                         <p>Nombre: {miembro.name}</p>
                         <p>Rol: {miembro.rol}</p>
                     </li>
