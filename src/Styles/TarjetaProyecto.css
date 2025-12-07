@@ -1,0 +1,71 @@
+/* Contenedor general con gris topo suave, translúcido y efecto “tul” */
+.card-container {
+  background: linear-gradient(
+      rgba(80, 80, 80, 0.65),
+      rgba(55, 55, 55, 0.55)
+    );
+   /* url('https://www.transparenttextures.com/patterns/white-paper.png');*/
+  backdrop-filter: blur(3px);
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  border-radius: 18px;
+  margin: 40px auto;
+  width: 90%;
+  max-width: 600px;
+}
+
+/* Tarjeta interna */
+.card-body {
+  background: rgba(245, 242, 236, 0.1); /* crema translúcido muy suave */
+  border: 1px solid rgba(220, 215, 210, 0.25);
+  border-radius: 22px;
+  padding: 30px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Título grande Primal Chic */
+.card-body h3 {
+  font-size: 2rem;           /* MÁS GRANDE */
+  color: rgb(230, 230, 230); /* gris claro suave */
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+/* Descripción */
+.card-body p {
+  color: rgb(215, 215, 215);
+  margin: 15px 0;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+}
+
+/* Botón boho chic */
+.card-body button {
+  color: #4a3f35; /* marrón topo suave */
+  background: linear-gradient(
+    to bottom right,
+    rgb(228, 224, 219),
+    rgb(200, 195, 190)
+  );
+  border: none;
+  border-radius: 12px;
+  margin-top: 20px;
+  padding: 12px 28px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.card-body button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(
+    to bottom right,
+    rgb(240, 236, 231),
+    rgb(215, 210, 205)
+  );
+}

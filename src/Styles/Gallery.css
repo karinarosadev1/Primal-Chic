@@ -1,0 +1,30 @@
+/* ====================================
+   GALLERY – PRIMAL CHIC
+  Estilo boho, colores naturales
+   ==================================== */
+
+
+.gallery-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+
+  
+  background-color:  #fffefd;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.gallery-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+ border: 2px solid #c9b8a8; 
+  transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+  transform: scale(1.06);
+}

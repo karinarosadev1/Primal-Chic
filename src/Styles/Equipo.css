@@ -1,0 +1,22 @@
+h2 {
+    text-align: center;
+}
+
+.TarjetaMiembro {
+    list-style: none;
+    padding: 0;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    max-width: 900px;
+}
+
+/* Tarjeta individual */
+.TarjetaMiembro li {
+    background: #f3eee7;
+    border: 1px solid #d8d2c6;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;   /* ✔️ corregido */
+}

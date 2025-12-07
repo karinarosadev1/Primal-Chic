@@ -6,7 +6,7 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
 //Importa los componentes desde otros archivos
-import App, {Subtitulo, Button} from './App.jsx'
+import App from './App.jsx'
 
 //Renderiza tus componentes dentro de ese root
 createRoot(document.getElementById('root')).render(

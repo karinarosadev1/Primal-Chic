@@ -1,0 +1,27 @@
+/* ====================================
+   FOOTER – PRIMAL CHIC
+   Estilo boho, tonos naturales
+   ==================================== */
+
+.footer {
+  background: #1d1d1d;
+  padding: 2rem 1rem;
+  text-align: left;
+  border-top: 1px solid rgba(90, 80, 70, 0.15);
+}
+
+.footer-text {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.2rem;
+  color: #d5d5d5;
+  margin: 0 0 0.4rem 0;
+  letter-spacing: 0.5px;
+}
+
+.footer-sub {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1rem;
+  color:  #d5d5d5;
+  margin: 0;
+  opacity: 0.8;
+}

@@ -1,0 +1,27 @@
+/* ====================================
+   MAIN – PRIMAL CHIC
+  Estilo boho, colores naturales
+   ==================================== */
+
+.main {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: #fffefd;
+}
+
+.main-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  color: #3e372f;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.main-text {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.2rem;
+  color: #6f665f;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
