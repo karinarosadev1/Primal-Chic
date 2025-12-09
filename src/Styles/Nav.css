@@ -3,12 +3,14 @@
    Estilo boho, colores naturales
    ==================================== */
 
-.nav {
+.nav-bar {
   background: #474646;
   border-bottom: 1px solid rgba(90, 80, 70, 0.15);
   padding: 1.2rem 0;
   display: flex;
   justify-content: center;
+  align-items: center;  /* para que carrito y links estén alineados verticalmente */
+  gap: 3rem; /* espacio entre menú y carrito */
 }
 
 .nav-list {
@@ -22,11 +24,9 @@
 .nav-link {
   font-family: "Cormorant Garamond", serif;
   font-size: 1.25rem;
-
   color: #d5d5d5;
   text-decoration: none;
   letter-spacing: 1px;
-
   transition: all 0.25s ease;
   padding-bottom: 0.2rem;
   position: relative;
@@ -53,6 +53,44 @@
   width: 100%;
 }
 
+/* Contenedor del carrito */
+.cart-container {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: #d5d5d5;
+  font-size: 1.8rem; /* tamaño más grande para el icono */
+  transition: color 0.25s ease;
+}
+
+.cart-container:hover {
+  color: #2f2a26; /* topo oscuro al hover */
+}
+
+/* Icono del carrito */
+.cart-icon {
+  font-size: 1.8rem;
+}
+
+/* Contador (badge) */
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background-color: #4b433d; /* tono topo oscuro */
+  color: #d5d5d5;            /* color claro para contraste */
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 2px 7px;
+  border-radius: 50%;
+  min-width: 22px;
+  text-align: center;
+  line-height: 1;
+  user-select: none;
+}
+
 /* Responsivo */
 @media (max-width: 600px) {
   .nav-list {
@@ -61,5 +99,17 @@
 
   .nav-link {
     font-size: 1.1rem;
+  }
+
+  .cart-container {
+    font-size: 1.5rem;
+  }
+
+  .cart-count {
+    font-size: 0.85rem;
+    min-width: 18px;
+    padding: 1px 5px;
+    top: -6px;
+    right: -10px;
   }
 }

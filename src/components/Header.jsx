@@ -2,12 +2,13 @@
 import React from 'react'
 import '../Styles/header.css'
 
+
 function Header() {
   return (
-    <div>
-<h1 className='header'>Bienvenido a Primal Chic</h1>
+    <header>
+<h1 className='header-title'>Bienvenido a Primal Chic</h1>
 
-    </div>
+    </header>
   )
 }
 

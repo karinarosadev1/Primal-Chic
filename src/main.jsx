@@ -7,12 +7,16 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 //Importa los componentes desde otros archivos
 import App from './App.jsx'
+import { StrictMode } from 'react'
 
 //Renderiza tus componentes dentro de ese root
 createRoot(document.getElementById('root')).render(
-<>
-    <App />
-  
- </>
+    <>
+        <StrictMode>
+            <App />
+        </StrictMode>
+
+
+    </>
 )
 

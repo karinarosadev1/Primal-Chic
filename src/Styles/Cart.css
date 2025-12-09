@@ -1,0 +1,10 @@
+.cart {
+  padding: 20px;
+  background: #f7f7f7;
+  border-left: 2px solid #ddd;
+}
+
+.btn-vaciar {
+  margin-top: 15px;
+  cursor: pointer;
+}

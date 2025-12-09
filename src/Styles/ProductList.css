@@ -1,0 +1,75 @@
+.product-section {
+  padding: 20px;
+   display: flex;        
+  flex-wrap: wrap;      /* Permite que bajen cuando no hay espacio */
+  gap: 20px;         
+  justify-content: center; /* centra las tarjetas */
+}
+
+.product-section h2 {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #333;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 250px;
+}
+
+.product-img {
+  width: 100%;
+  height: auto;
+  max-height: 180px;
+  object-fit: cover;      /* Recorta la imagen si es muy grande */
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.counter-btn {
+  background: #ddd;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.counter-btn:hover {
+  background: #ccc;
+}
+
+.counter-value {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.btn-add {
+  background-color: #1f1f1f;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-add:hover {
+  background-color: #727272;
+}
