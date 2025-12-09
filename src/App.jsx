@@ -11,6 +11,7 @@ import Footer from "./components/Footer"
 import { useState } from 'react'
 import ProductList from "./components/ProductList";
 import Cart from "./components/Cart";
+import Formulario from './components/Formulario'
 
 
 
@@ -73,6 +74,8 @@ function App() {
         titulo="Proyecto Chic"
         descripcion="Un Ecommerce realizado con React y mucho estilo" botonTexto="Explorar" />
 
+        <Formulario />
+    
       <Footer />
     </>
   )

@@ -19,7 +19,7 @@ function ProductList({ productos, agregarAlCarrito }) {
 }
 
 function ProductCard({ producto, agregarAlCarrito }) {
-  const [cantidad, setCantidad] = useState(1);
+  const [cantidad, setCantidad] = useState(0);
 
   const aumentar = () => setCantidad(cantidad + 1);
   const disminuir = () => {

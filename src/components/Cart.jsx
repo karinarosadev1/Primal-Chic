@@ -12,7 +12,7 @@ function Cart({ carrito, vaciarCarrito }) {
         <ul>
           {carrito.map((item, index) => (
             <li key={index}>
-              {item.nombre} - ${item.precio}
+              {item.nombre}  ${item.precio}
             </li>
           ))}
         </ul>
