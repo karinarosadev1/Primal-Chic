@@ -1,75 +1,97 @@
-.product-section {
-  padding: 20px;
-   display: flex;        
-  flex-wrap: wrap;      /* Permite que bajen cuando no hay espacio */
-  gap: 20px;         
-  justify-content: center; /* centra las tarjetas */
+/* Contenedor general */
+.product-list {
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.product-section h2 {
+.product-list h2 {
   text-align: center;
+  font-size: 30px;
+  margin-bottom: 25px;
+  color: #2e2e2e;
+  letter-spacing: 1px;
+}
+
+/* Grilla de productos */
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Tarjeta */
+.producto-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+  transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Efecto hover elegante */
+.producto-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Imagen del producto */
+.producto-card img {
   width: 100%;
-  margin-bottom: 30px;
-  font-size: 28px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+/* Título */
+.producto-card h3 {
+  font-size: 20px;
+  margin-bottom: 6px;
   color: #333;
 }
 
-.product-card {
-  border: 1px solid #ddd;
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 250px;
+/* Descripción */
+.descripcion {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 12px;
+  line-height: 1.3;
+  min-height: 40px;
 }
 
-.product-img {
-  width: 100%;
-  height: auto;
-  max-height: 180px;
-  object-fit: cover;      /* Recorta la imagen si es muy grande */
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-.counter {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 10px 0;
-}
-
-.counter-btn {
-  background: #ddd;
-  border: none;
-  padding: 6px 10px;
-  cursor: pointer;
-  font-size: 18px;
-  border-radius: 5px;
-}
-
-.counter-btn:hover {
-  background: #ccc;
-}
-
-.counter-value {
+/* Precio */
+.precio {
   font-size: 18px;
   font-weight: bold;
+  color: #1f1f1f;
+  margin-bottom: 15px;
 }
 
-.btn-add {
+/* Botón agregar */
+.btn-agregar {
   background-color: #1f1f1f;
   color: white;
   border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
+  padding: 10px 14px;
+  border-radius: 6px;
   cursor: pointer;
-  margin-top: 10px;
+  transition: 0.2s ease;
 }
 
-.btn-add:hover {
+.btn-agregar:hover {
   background-color: #727272;
+}
+
+/* Mensajes de error */
+.error {
+  color: red;
+  font-weight: bold;
+  text-align: center;
 }

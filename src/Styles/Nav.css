@@ -1,18 +1,22 @@
-/* ====================================
-   NAV – PRIMAL CHIC
-   Estilo boho, colores naturales
-   ==================================== */
-
 .nav-bar {
   background: #474646;
   border-bottom: 1px solid rgba(90, 80, 70, 0.15);
   padding: 1.2rem 0;
   display: flex;
-  justify-content: center;
-  align-items: center;  /* para que carrito y links estén alineados verticalmente */
-  gap: 3rem; /* espacio entre menú y carrito */
+  justify-content: center;   /* centra el contenedor interno */
 }
 
+/* CONTENEDOR INTERNO */
+.nav-content {
+  width: 100%;
+  max-width: 1200px;          
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between; /* menú izquierda / ícono derecha */
+  align-items: center;
+}
+
+/* LISTA */
 .nav-list {
   display: flex;
   gap: 2.5rem;
@@ -28,88 +32,20 @@
   text-decoration: none;
   letter-spacing: 1px;
   transition: all 0.25s ease;
-  padding-bottom: 0.2rem;
-  position: relative;
 }
 
-/* Línea elegante tipo marca premium */
-.nav-link::after {
-  content: "";
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 0%;
-  height: 1px;
-  background-color: #4b433d;
-  transition: width 0.3s ease;
-}
-
-/* Hover elegante */
 .nav-link:hover {
-  color: #2f2a26; /* topo oscuro */
+  color: #ffffff;
 }
 
-.nav-link:hover::after {
-  width: 100%;
-}
-
-/* Contenedor del carrito */
-.cart-container {
-  position: relative;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  color: #d5d5d5;
-  font-size: 1.8rem; /* tamaño más grande para el icono */
-  transition: color 0.25s ease;
-}
-
-.cart-container:hover {
-  color: #2f2a26; /* topo oscuro al hover */
-}
-
-/* Icono del carrito */
+/* ICONO DEL CARRITO */
 .cart-icon {
-  font-size: 1.8rem;
+  font-size: 28px;        /* tamaño real del ícono */
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.2s ease;
 }
 
-/* Contador (badge) */
-.cart-count {
-  position: absolute;
-  top: -8px;
-  right: -12px;
-  background-color: #4b433d; /* tono topo oscuro */
-  color: #d5d5d5;            /* color claro para contraste */
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 700;
-  font-size: 1rem;
-  padding: 2px 7px;
-  border-radius: 50%;
-  min-width: 22px;
-  text-align: center;
-  line-height: 1;
-  user-select: none;
-}
-
-/* Responsivo */
-@media (max-width: 600px) {
-  .nav-list {
-    gap: 1.2rem;
-  }
-
-  .nav-link {
-    font-size: 1.1rem;
-  }
-
-  .cart-container {
-    font-size: 1.5rem;
-  }
-
-  .cart-count {
-    font-size: 0.85rem;
-    min-width: 18px;
-    padding: 1px 5px;
-    top: -6px;
-    right: -10px;
-  }
+.cart-icon:hover {
+  color: #d5d5d5;
 }
