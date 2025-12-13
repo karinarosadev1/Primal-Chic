@@ -4,6 +4,8 @@ import ProductCard from "../components/ProductCard";
 import Header from "../components/Header";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import { useCart } from "../context/CartContext";
+
 
 
 
@@ -13,8 +15,9 @@ function Products() {
     const [cargando, setCargando] = useState(true);
     const [error, setError] = useState(null);
 
-    // Simula carrito
-    const [carrito, setCarrito] = useState([]);
+    // carrito global (Context)
+    const { agregarAlCarrito } = useCart();
+
 
     useEffect(() => {
         getProducts()
@@ -28,10 +31,6 @@ function Products() {
             });
     }, []);
 
-    const agregarCarrito = (producto, cantidad) => {
-        setCarrito(prev => [...prev, { ...producto, cantidad }]);
-        alert(`${cantidad} ${producto.nombre} agregado al carrito`);
-    };
 
     if (cargando) return <p>Cargando productos…</p>;
     if (error) return <p>{error}</p>;
@@ -48,15 +47,15 @@ function Products() {
                         <ProductCard
                             key={producto.id}
                             producto={producto}
-                            onAddCart={agregarCarrito}
+                            onAddCart={agregarAlCarrito}
                         />
                     ))}
                 </div>
             </div>
 
-             <Footer />
-            </>
-            );
+            <Footer />
+        </>
+    );
 }
 
-            export default Products;
+export default Products;

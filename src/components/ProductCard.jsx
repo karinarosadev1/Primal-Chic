@@ -6,7 +6,7 @@ import { useState } from "react";
 
 function ProductCard({ producto, onAddCart }) {
 
-    const [cantidad, setCantidad] = useState(0);
+    const [cantidad, setCantidad] = useState(1);
 
     // Maneja agregar al carrito
     const handleAdd = (e) => {
