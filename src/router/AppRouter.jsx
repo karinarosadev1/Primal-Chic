@@ -7,6 +7,9 @@ import Contact from "../pages/Contact";
 import Products from "../pages/Products";
 import ProductoDetail from "../pages/ProductoDetail";
 import CartPage from "../pages/CartPage";
+import Login from "../pages/Login";
+import ProtectedRoute from "../components/ProtectedRoute";
+import AdminPage from "../pages/AdminPage";
 
 function AppRouter() {
     return (
@@ -14,11 +17,28 @@ function AppRouter() {
             <Route path="/" element={<Home />} />
             <Route path="/Nosotros" element={<About />} />
             <Route path="/contacto" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
 
             {/* Productos */}
             <Route path="/productos" element={<Products />} />
             <Route path="/productos/:id" element={<ProductoDetail />} />
-            <Route path="/carrito" element={<CartPage />} />
+
+            {/* Rutas protegidas */}
+            <Route path="/carrito"
+                element={<ProtectedRoute>
+                    <CartPage />
+                </ProtectedRoute>
+                }
+            />
+
+            <Route
+                path="/admin"
+                element={
+                    <ProtectedRoute>
+                        <AdminPage />
+                    </ProtectedRoute>
+                }
+            />
 
         </Routes>
     );
