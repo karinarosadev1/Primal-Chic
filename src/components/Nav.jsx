@@ -1,24 +1,34 @@
-import React from 'react'
-import '../Styles/Nav.css'
+import React from "react";
+import { Link } from "react-router-dom";
+import "../Styles/Nav.css";
 import { FaShoppingCart } from "react-icons/fa";
 
 function Nav({ totalItems }) {
   return (
-    <nav className='nav-bar'>
+    <nav className="nav-bar">
       <div className="nav-content">
 
-        <ul className='nav-list'>
-          <li><a href="#" className="nav-link">Inicio</a></li>
-          <li><a href="#" className="nav-link">Nosotros</a></li>
-          <li><a href="#" className="nav-link">Contactos</a></li>
+        <ul className="nav-list">
+          <li>
+            <Link to="/" className="nav-link">Inicio</Link>
+          </li>
+          <li>
+            <Link to="/nosotros" className="nav-link">Nosotros</Link>
+          </li>
+          <li>
+            <Link to="/contacto" className="nav-link">Contacto</Link>
+          </li>
+          <li>
+            <Link to="/productos" className="nav-link">Tienda</Link>
+          </li>
         </ul>
 
-        <FaShoppingCart className="cart-icon" />
-
-
+        <Link to="/carrito" className="cart-link">
+                <FaShoppingCart className="cart-icon" />
+            </Link>
       </div>
     </nav>
-  )
+  );
 }
 
-export default Nav
+export default Nav;

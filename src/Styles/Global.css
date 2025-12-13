@@ -1,0 +1,26 @@
+/* GLOBAL LAYOUT */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Tipografías general */
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #faf6f1; /* tono boho suave */
+  margin: 0;
+}
+
+/* Títulos */
+h1, h2 {
+  text-align: center;
+}
+
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.6;
+}
