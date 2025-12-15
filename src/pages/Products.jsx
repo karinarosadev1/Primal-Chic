@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { useCart } from "../context/CartContext";
+import "../Styles/Products.css";
 
 
 

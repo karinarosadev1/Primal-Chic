@@ -40,7 +40,9 @@ function Nav() {
           {isAuthenticated ? (
             <button onClick={logout}>Cerrar sesión</button>
           ) : (
-            <button onClick={login}>Iniciar sesión</button>
+            <Link to="/login" className="nav-link">
+              Iniciar sesión
+            </Link>
           )}
         </div>
       </div>

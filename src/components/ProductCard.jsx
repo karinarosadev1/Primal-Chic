@@ -23,11 +23,11 @@ function ProductCard({ producto, onAddCart }) {
 
             <img
                 src={producto.imagen}
-                alt={producto.name}
+                alt={producto.nombre}
                 className="producto-img"
             />
 
-            <h3>{producto.name}</h3>
+            <h3>{producto.nombre}</h3>
 
             <p className="descripcion">{producto.descripcion}</p>
 

@@ -1,15 +1,26 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  // Al cargar la app, verifica si hay token
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
   function login() {
+    // Login simulado
+    localStorage.setItem("token", "fake-token");
     setIsAuthenticated(true);
   }
 
   function logout() {
+    localStorage.removeItem("token");
     setIsAuthenticated(false);
   }
 
