@@ -5,7 +5,7 @@ import ProductCard from "./ProductCard";
 
 function ProductCarousel({ productos }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const visibleItems = 2; // cantidad de items visibles a la vez
+  const visibleItems = 3; // cantidad de items visibles a la vez
 
   const prevSlide = () => {
     setCurrentIndex((prev) =>
@@ -19,6 +19,10 @@ function ProductCarousel({ productos }) {
     );
   };
 
+  //  Evita errores si productos todavía no cargó
+  if (!productos || productos.length === 0) return null;
+
+
   return (
     <div className="carousel-container">
       <h2>Ver mas en tienda</h2>
@@ -30,12 +34,18 @@ function ProductCarousel({ productos }) {
         <div className="carousel-track">
           {productos
             .slice(currentIndex, currentIndex + visibleItems)
-            .map((prod) => (
-              <Link key={prod.id} to={`/productos/${prod.id}`} className="carousel-item">
+            .map((prod, index) => (
+
+              <Link key={`${prod.id}-${index}`}
+                to={`/productos/${prod.id}`}
+                className="carousel-item">
+                  
                 <ProductCard producto={prod} />
               </Link>
             ))}
         </div>
+
+
 
         <button className="carousel-control next" onClick={nextSlide}>
           &#10095;

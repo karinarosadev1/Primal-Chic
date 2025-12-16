@@ -1,9 +1,9 @@
 import React from "react";
 import "../Styles/Cart.css";
+import { Link } from "react-router-dom";
+
 
 function Cart({ carrito, vaciarCarrito }) {
-  //const total = carrito.length;
-  // Total general
   const total = carrito.reduce(
     (acc, item) => acc + Number(item.precio) * (item.cantidad || 1),
     0
@@ -19,9 +19,8 @@ function Cart({ carrito, vaciarCarrito }) {
       ) : (
         <>
           <ul className="cart-list">
-            {carrito.map((item) => (
-              <li key={item.id} className="cart-item">
-
+            {carrito.map((item, index) => (
+              <li key={`${item.id}-${index}`} className="cart-item">
                 <div>
                   <img
                     className="cart-item-img"
@@ -29,18 +28,34 @@ function Cart({ carrito, vaciarCarrito }) {
                     alt={item.nombre} />
                 </div>
 
-
                 <div>
                   <strong>{item.nombre}</strong>
                   <p>{item.descripcion}</p>
-                   <p>{item.precio}</p>
-                </div>               
+                  <p> {Number(item.precio).toLocaleString("es-AR")}</p>
+                  <p>Cantidad: {item.cantidad}</p>
+                  <p>
+                    Subtotal: $
+                    {(Number(item.precio) * item.cantidad).toLocaleString(
+                      "es-AR"
+                    )}
+                  </p>
+                </div>
               </li>
             ))}
           </ul>
-<div>
-  <strong>Precio Total: ${total}</strong>
-</div>
+
+
+          <div className="cart-total">
+            <strong>Precio Total: ${total.toLocaleString("es-AR")}</strong>
+          </div>
+
+          <Link to="/checkout">
+            <button className="btn-checkout">
+              Finalizar compra
+            </button>
+          </Link>
+
+
           <button className="btn-vaciar" onClick={vaciarCarrito}>
             Vaciar carrito
           </button>

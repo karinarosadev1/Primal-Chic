@@ -1,6 +1,5 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-
 import Home from "../pages/Home";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
@@ -10,6 +9,7 @@ import CartPage from "../pages/CartPage";
 import Login from "../pages/Login";
 import ProtectedRoute from "../components/ProtectedRoute";
 import AdminPage from "../pages/AdminPage";
+import CheckoutPage from "../pages/CheckoutPage";
 
 function AppRouter() {
     return (
@@ -31,6 +31,10 @@ function AppRouter() {
                 }
             />
 
+
+            <Route path="/checkout"
+                element={<CheckoutPage />} />
+
             <Route
                 path="/admin"
                 element={
@@ -39,6 +43,7 @@ function AppRouter() {
                     </ProtectedRoute>
                 }
             />
+
 
         </Routes>
     );

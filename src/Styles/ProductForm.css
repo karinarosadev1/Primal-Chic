@@ -1,27 +1,72 @@
+/* src/Styles/ProductForm.css */
+
 .product-form {
-  max-width: 420px;
+  max-width: 480px;
   margin: 2rem auto;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem; /* espacio entre inputs y textarea */
+  font-family: 'Inter', sans-serif;
+}
+
+.product-form h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #222;
 }
 
 .product-form input,
-.product-form textarea {
-  padding: 0.6rem;
+.product-form textarea,
+.product-form select {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
   border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.product-form input:focus,
+.product-form textarea:focus,
+.product-form select:focus {
+  border-color: #222;
+}
+
+.product-form textarea {
+  resize: vertical;
+  min-height: 80px;
 }
 
 .product-form span {
   color: #c0392b;
   font-size: 0.85rem;
+  margin-top: 0.2rem;
+  display: block;
 }
 
 .product-form button {
-  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: center; /* centra el botón */
+}
+
+.product-form button:disabled {
+  background-color: #999;
+  cursor: not-allowed;
 }
 
 .form-msg {
   margin-top: 1rem;
   text-align: center;
+  font-weight: 500;
+  color: #27ae60;
 }

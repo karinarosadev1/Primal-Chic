@@ -11,11 +11,11 @@ function ProductCard({ producto, onAddCart }) {
     // Maneja agregar al carrito
     const handleAdd = (e) => {
         e.preventDefault(); // evita que el Link de Products navegue
-        if (onAddCart) {
-            onAddCart(producto, cantidad);
-        }
-        setCantidad(1); // resetea contador después de agregar
-    };
+         if (cantidad < 1) return;
+
+    onAddCart(producto, cantidad);
+    setCantidad(1); // reset
+  };
 
 
     return (
@@ -36,19 +36,16 @@ function ProductCard({ producto, onAddCart }) {
 
             {/* Contador */}
             <div className="contador">
-                <button onClick={() => setCantidad(c => Math.max(1, c - 1))}>-</button>
+                 <button onClick={() => setCantidad(c => Math.max(1, c - 1))}>-</button>
+
                 <span>{cantidad}</span>
-                <button onClick={() => setCantidad(c => c + 1)}>+</button>
+                 <button onClick={() => setCantidad((c) => c + 1)}>+</button>
             </div>
 
             {/* Botón agregar al carrito */}
             <button className="btn-agregar" onClick={handleAdd}>
                 Agregar al carrito
             </button>
-
-
-
-
 
         </div>
     );

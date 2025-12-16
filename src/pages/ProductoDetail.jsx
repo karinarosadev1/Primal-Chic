@@ -12,6 +12,7 @@ function ProductoDetail() {
     const { agregarAlCarrito } = useCart();
 
     const [producto, setProducto] = useState(null);
+     const [cantidad, setCantidad] = useState(1);
     const [cargando, setCargando] = useState(true);
     const [error, setError] = useState(null);
 
@@ -36,7 +37,6 @@ function ProductoDetail() {
     };
 
     return (
-
         <>
             <Header />
             <div className="product-detail-page">
@@ -45,7 +45,7 @@ function ProductoDetail() {
                 <div className="product-detail">
                     <img
                         src={producto.imagen}
-                        alt={producto.name}
+                        alt={producto.nombre}
                         className="detail-img"
                     />
 
@@ -57,13 +57,10 @@ function ProductoDetail() {
                         </p>
 
                         <div className="contador">
-                            <button onClick={() => setCantidad(c => Math.max(1, c - 1))}>
-                                -
-                            </button>
+                             <button onClick={() => setCantidad((c) => Math.max(1, c - 1))}> - </button>
                             <span>{cantidad}</span>
-                            <button onClick={() => setCantidad(c => c + 1)}>
-                                +
-                            </button>
+                             <button onClick={() => setCantidad((c) => c + 1)}> + </button>
+                             
                         </div>
 
 

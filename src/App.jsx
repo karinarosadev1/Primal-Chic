@@ -3,16 +3,19 @@ import { BrowserRouter } from "react-router-dom";
 import AppRouter from "./router/AppRouter";
 import { CartProvider } from "./context/CartContext";
 import { AuthProvider } from "./context/AuthContext";
+import { ProductsProvider } from "./context/ProductsContext";
 
 function App() {
     return (
-          <AuthProvider>
-        <CartProvider>
-            <BrowserRouter>
-                <AppRouter />
-            </BrowserRouter>
-        </CartProvider>
-        </AuthProvider>
+        <AuthProvider>
+            <ProductsProvider>
+                <CartProvider >
+                    <BrowserRouter>
+                        <AppRouter />
+                    </BrowserRouter>
+                </CartProvider >
+            </ProductsProvider>
+        </AuthProvider >
     );
 }
 

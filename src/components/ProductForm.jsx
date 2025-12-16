@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "../Styles/ProductForm.css";
 
+
+
 function ProductForm({ onCreate }) {
     const [form, setForm] = useState({
         nombre: "",
@@ -13,6 +15,7 @@ function ProductForm({ onCreate }) {
 
     const [errores, setErrores] = useState({});
     const [mensaje, setMensaje] = useState("");
+    const [loading, setLoading] = useState(false);
 
     const handleChange = (e) => {
         setForm({
@@ -61,13 +64,15 @@ function ProductForm({ onCreate }) {
         if (!validar()) return;
 
         try {
+            setLoading(true);
+
             await onCreate({
                 ...form,
                 precio: Number(form.precio),
                 stock: Number(form.stock)
             });
 
-            setMensaje("Producto agregado correctamente");
+            alert("Producto agregado correctamente");
 
             setForm({
                 nombre: "",
@@ -78,16 +83,18 @@ function ProductForm({ onCreate }) {
                 stock: ""
             });
         } catch (error) {
-            setMensaje("Error al agregar el producto");
+            console.error(error);
+            alert("Error al agregar el producto");
+        } finally {
+            setLoading(false);
         }
     };
 
     return (
-
         <section className="product-form">
             <h2>AGREGAR PRODUCTO</h2>
 
-            <form className="product-form" onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
 
                 <input
                     type="text"
@@ -127,12 +134,13 @@ function ProductForm({ onCreate }) {
                 />
                 {errores.imagen && <span>{errores.imagen}</span>}
 
-                
+
                 <select
                     name="categoria"
                     value={form.categoria}
                     onChange={handleChange}
                 >
+                    <option value="">Seleccionar categoría</option>
                     <option value="Blusas">Blusas</option>
                     <option value="Calzado">Calzados</option>
                     <option value="Pantalones">Pantalones</option>
@@ -141,7 +149,19 @@ function ProductForm({ onCreate }) {
                 </select>
                 {errores.categoria && <span>{errores.categoria}</span>}
 
-                <button type="submit">CREAR PRODUCTO</button>
+                <input
+                    type="number"
+                    name="stock"
+                    placeholder="Stock"
+                    value={form.stock}
+                    onChange={handleChange}
+                />
+                {errores.stock && <span>{errores.stock}</span>}
+
+
+                <button type="submit" disabled={loading}>
+                    {loading ? "Creando..." : "CREAR PRODUCTO"}
+                </button>
 
                 {mensaje && <p className="form-msg">{mensaje}</p>}
             </form>
